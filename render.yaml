@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: n8n-automate-suraj  # Service name; this determines the Render subdomain
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: N8N_BASIC_AUTH_USER
+        value: automate-suraj  # Your username for n8n login
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: AuT0m@tionSuRu291     
+      - key: N8N_HOST
+        value: n8n-automate-suraj.onrender.com  # Render-provided subdomain
+      - key: WEBHOOK_URL
+        value: https://n8n-automate-suraj.onrender.com  # Webhook URL for workflows
+      - key: N8N_PORT
+        value: 5678            # Default n8n port
